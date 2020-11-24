@@ -15,3 +15,11 @@ should explain your model and give an analysis of its accuracy.
 To enhance your submission, you might consider developing and comparing more than
 one model. Rest assured, all the above concepts will be explored in lecture videos and
 other materials in the coming semester.
+
+##### How to run the web service
+
+```bash
+$ export FLASK_APP=web-service.py
+$ python -m flask run
+ * Running on http://127.0.0.1:5000/
+ ```
