@@ -4,7 +4,7 @@
 .idea/
 
 # Jupyter Notebook
-.ipynb_checkpoints/
+project_files/.ipynb_checkpoints/
 
 # Flask stuff:
 instance/
