@@ -1,10 +1,10 @@
 # git ignore file
 
 # JetBrains PyCharm
-.idea/
+project_files/.idea/
 
 # Jupyter Notebook
-project_files/.ipynb_checkpoints/
+project_files/train-model/.ipynb_checkpoints/
 
 # Flask stuff:
 instance/
