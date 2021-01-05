@@ -1,4 +1,4 @@
-<!-- John Shields - G0034843 -->
+<!-- John Shields - G00348436 -->
 <!doctype html>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -7,12 +7,40 @@
 <title>Train Model</title>
 <body>
 <h1>Emerging Technologies</h1>
-<h2>John Shields - G0034843</h2>
+<h2>John Shields - G00348436</h2>
 
 <p>A web application for the main assignment in Emerging Technologies...</p>
 
 <p>GitHub Repository <a href="https://github.com/johnshields/EMT_PROJECT">Link</a>.</p>
 
 <h2>Train Model</h2>
-<img src="https://i.ibb.co/6PgzXx9/model.png" alt="model">
+
+ <form class="container center_div">
+        <div>
+          <label for="input_speed">Wind Speed:</label>
+          <input type="text" id="input_speed" placeholder="Enter Wind Speed: ">
+        </div>
+     <button type="button">Enter</button>
+ </form>
+
+<div id="output"></div>
+
+<script>
+      async function post()
+      {
+        const value = document.getElementById('input_speed').value;
+        const response = await fetch('/powerproduction', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({value})
+
+    });
+          const resp = await response.json();
+          document.getElementById("prediction").innerHTML=resp.prediction[0]
+      console.log(resp)
+}
+document.getElementById("enter_btn").addEventListener("click", post);
+    </script>
 </body>
