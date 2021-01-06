@@ -9,23 +9,26 @@ https://stackoverflow.com/questions/24808660/sending-a-form-array-to-flask
 https://pythonexamples.org/python-list-to-json/
 
 John Shields - G00348436
-Web Service App that uses the model to make predictions
+
+Web Service
+Flask App that handles API requests for user input and
+uses the model to make predictions to return to the user
 
 # run the web service in cli
 set FLASK_APP=web_service.py && python -m flask run
 """
 
-# necessary imports
-# convert python lists to JSON
-import json
+# flask stuff
+from flask import request, jsonify, render_template, Flask
+# neural networks
+import tensorflow.keras as krs
 # for loading model
 from os import path
 # numpy arrays
 import numpy as np
-# neural networks
-import tensorflow.keras as krs
-# flask stuff
-from flask import request, jsonify, render_template, Flask
+# convert to JSON
+import json
+
 
 # create a new web app
 app = Flask(__name__, static_folder="static", template_folder="templates")
@@ -46,19 +49,19 @@ def predict_power():
     # load the model
     model = load_model()
     print(model)
+    # get entered speed request
     speed = request.form
-    # get entered speed value request
     if speed is not None:
         speed_value = float(speed['value'])
-        # takes float value and turns to array
+        # takes value and turns to array
         array_element = np.array([speed_value])
-        # puts array into model to have it predict the power
+        # puts array into model to have it predict
         prediction = model.predict(array_element)
         prdtn = prediction.tolist()
         #  take python list and convert into JSON string
         jsn = json.dumps(prdtn)
         power["response"] = jsn
-        # respond with a power prediction
+        # respond with a prediction in JSON
         power["success"] = True
     else:
         pass
@@ -83,6 +86,6 @@ def load_model():
         return model
 
 
-# have the app run a localhost on the port 8080
+# have the app run a localhost on the port 5000
 if __name__ == "__main__":
-    app.run(host='localhost', port=8080)
+    app.run(host='0.0.0.0', port=5000)

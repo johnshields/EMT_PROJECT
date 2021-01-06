@@ -1,10 +1,15 @@
 <!--
 Code References:
 https://stackoverflow.com/questions/14711552/external-javascript-file-is-not-getting-added-when-running-on-flask
+https://code.jquery.com/
+https://pythonhow.com/add-css-to-flask-website/
 Icon Link
 https://icon-icons.com/icon/map-wind-turbine/156968
 
-John Shields - G00348436 -->
+John Shields - G00348436
+
+Index HTML for the Web Service
+ -->
 
 <!doctype html>
 <html lang="en">
@@ -15,36 +20,40 @@ John Shields - G00348436 -->
     <!-- linking css style script and icon-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Keras Model Playground</title>
 </head>
 
-<title>Keras Model Playground</title>
 <body>
-<h1>Emerging Technologies</h1>
-<h2>John Shields - G00348436</h2>
+<header>
+    <h1>A Keras Model Playground for Wind Turbines!</h1>
+</header>
+<img src="https://i.ibb.co/bmyHrwL/Wind-Turbines.jpg" alt="wind-turbines" class="image">
 
-<p>Keras Model Playground for Wind Turbines.</p>
-
-<h2 style="text-align: center">Keras Model Predictions</h2>
+<p class="description">Enter a Wind Speed and have the Model Predict the Power of the Wind Turbine!</p>
 <div>
-    <h1>Enter a Wind Speed!</h1>
-    <div>
+    <div align="center">
         <!-- user input -->
-        <label for="speed_input"></label>
-        <input id="speed_input" type="text" placeholder="Enter Wind Speed"/>
+        <label for="input"></label>
+        <input class="speed-input" id="input" type="text" placeholder="Enter Wind Speed"/>
+    </div><br>
+    <div align="center">
+        <!-- button to send user request -->
+        <button class="button" type="button" id="predict_power">Predict Power</button>
     </div>
-    <div>
-        <!-- button to send request -->
-        <button type="button" id="predict_power">Predict Power</button>
-    </div>
-    <h3 id="power_prediction"></h3>
+    <!-- power prediction is responded here -->
+    <br>
+    <h3 class="power-prediction" id="prediction"></h3>
 </div>
-<div id="power_prediction"></div>
 
-<p>View The <a href="https://github.com/johnshields/EMT_PROJECT">GitHub Repository!</a></p>
+<h4 class="author-name">Created by John Shields</h4>
+<p class="hyper-links">View the <a href="https://github.com/johnshields/EMT_PROJECT">GitHub Repository!</a></p>
+<p class="hyper-links">Check out <a href="https://keras.io/">Keras!</a></p>
+<p class="hyper-links">Learn about <a href="https://tinyurl.com/y49jthg6">Neural Networks!</a></p>
+
 </body>
 
 <footer>
-    <!-- JQuery Script https://code.jquery.com/-->
+    <!-- JQuery Script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- my Model Playground Script -->

@@ -1,0 +1,74 @@
+/*
+ John Shields - G00348436
+
+ Style Sheet for the Index HTML file
+*/
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: antiquewhite;
+}
+
+header {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 8px;
+    max-width: 40%;
+    height: auto;
+}
+
+.description {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+}
+
+.speed-input {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    border: 3px solid;
+    font-size: 20px;
+    padding: 10px 1px;
+}
+
+.button {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    background-color: #0e3a8a;
+    border: 3px solid;
+    font-size: 24px;
+    padding: 14px 40px;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)
+}
+
+.power-prediction {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    font-size: 24px;
+    padding: 14px 40px;
+}
+
+.author-name {
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding-top: 5px;
+    float: bottom;
+    color: black;
+    margin-left: 50px;
+}
+
+.hyper-links {
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-left: 50px;
+    vertical-align: baseline;
+}
