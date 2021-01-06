@@ -1,0 +1,53 @@
+<!--
+Code References:
+https://stackoverflow.com/questions/14711552/external-javascript-file-is-not-getting-added-when-running-on-flask
+Icon Link
+https://icon-icons.com/icon/map-wind-turbine/156968
+
+John Shields - G00348436 -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- linking css style script and icon-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<title>Keras Model Playground</title>
+<body>
+<h1>Emerging Technologies</h1>
+<h2>John Shields - G00348436</h2>
+
+<p>Keras Model Playground for Wind Turbines.</p>
+
+<h2 style="text-align: center">Keras Model Predictions</h2>
+<div>
+    <h1>Enter a Wind Speed!</h1>
+    <div>
+        <!-- user input -->
+        <label for="speed_input"></label>
+        <input id="speed_input" type="text" placeholder="Enter Wind Speed"/>
+    </div>
+    <div>
+        <!-- button to send request -->
+        <button type="button" id="predict_power">Predict Power</button>
+    </div>
+    <h3 id="power_prediction"></h3>
+</div>
+<div id="power_prediction"></div>
+
+<p>View The <a href="https://github.com/johnshields/EMT_PROJECT">GitHub Repository!</a></p>
+</body>
+
+<footer>
+    <!-- JQuery Script https://code.jquery.com/-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- my Model Playground Script -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/model_playground.js') }}"></script>
+</footer>
+</html>
