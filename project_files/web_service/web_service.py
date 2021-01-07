@@ -13,23 +13,22 @@ John Shields - G00348436
 
 Web Service
 Flask App that handles API requests for user input and
-uses the model to make predictions to return to the user
+uses the model to make predictions to respond to the user
 
 # run the web service in cli
 set FLASK_APP=web_service.py && python -m flask run
 """
 
-# flask stuff
-from flask import request, jsonify, render_template, Flask
-# neural networks
-import tensorflow.keras as krs
-# for loading model
-from os import path
-# numpy arrays
-import numpy as np
 # convert to JSON
 import json
 
+# numpy arrays
+import numpy as np
+# flask app
+from flask import request, jsonify, render_template, Flask
+# neural networks
+# for loading model
+from tensorflow.keras.models import load_model
 
 # create a new web app
 app = Flask(__name__, static_folder="static", template_folder="templates")
@@ -48,7 +47,7 @@ def home():
 def predict_power():
     power = {"success": False}
     # load the model
-    model = load_model()
+    model = load_model_prediction()
     print(model)
     # get entered speed request
     speed = request.form
@@ -74,17 +73,14 @@ def predict_power():
 # function to load model from file
 # attempts to load the model from the first location in the first try
 # if fails it will try look for the file another location
-def load_model():
-    # local - successfully loads the model
+def load_model_prediction():
     try:
-        model = krs.models.load_model("mp2.h5")
+        model = load_model("../mp2.h5")
     except:
-        # docker - currently not loading the model
         try:
-            model = krs.models.load_model("mp2.h5")
+            model = load_model("mp2.h5")
         except:
             print("failed to load model")
-            print(path.isfile("mp2.h5"))
     finally:
         return model
 

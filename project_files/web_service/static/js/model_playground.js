@@ -22,16 +22,18 @@ $("#predict_power").click(function () {
          // take the entered speed value
         data: speedData,
         success: function (data) {
-            // send back a prediction response
             const powerData = data[['response']];
-            $("#prediction").val(`${powerData}`);
+            // fix the power result to 4 decimal places
+            let result = Number(powerData).toFixed(4);
+            // send back a prediction response
+            $("#prediction").val(`${result}`);
             console.log("power output value:");
-            console.log(powerData);
+            console.log(result);
         },
         error: function () {
             // error for catching any unwanted values
             $("#prediction").val("ERROR! Enter NUMBER!");
-            console.log("unwanted value entered");
+            console.log("failed to respond/unwanted value entered");
         },
     });
 })
