@@ -27,6 +27,7 @@ $ set FLASK_APP=web_service.py && python -m flask run
 * Running on http://127.0.0.1:5000/
 
 ##### Docker Image
+Open the repository directory in Command-Line and enter:
 ```cmd
 $ cd project_files\web_service
 $ docker build . -t model_playground
