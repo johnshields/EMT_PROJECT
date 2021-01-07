@@ -4,7 +4,7 @@
 /project_files/.idea/
 
 # Jupyter Notebook
-/project_files/train-model/.ipynb_checkpoints/
+/project_files/train_model/.ipynb_checkpoints/
 
 # Flask stuff:
-/project_files/web-service/__pycache__
+/project_files/web_service/__pycache__

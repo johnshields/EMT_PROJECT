@@ -7,6 +7,7 @@ https://pythonbasics.org/flask-http-methods/
 https://www.tensorflow.org/api_docs/python/tf/keras/models/load_model
 https://stackoverflow.com/questions/24808660/sending-a-form-array-to-flask
 https://pythonexamples.org/python-list-to-json/
+https://stackoverflow.com/questions/16615444/take-off-from-json-string
 
 John Shields - G00348436
 
@@ -60,7 +61,9 @@ def predict_power():
         prdtn = prediction.tolist()
         #  take python list and convert into JSON string
         jsn = json.dumps(prdtn)
-        power["response"] = jsn
+        # strip out the '[[]]' from the string
+        power_response = jsn.strip('[[]]')
+        power["response"] = power_response
         # respond with a prediction in JSON
         power["success"] = True
     else:
@@ -72,11 +75,11 @@ def predict_power():
 # attempts to load the model from the first location in the first try
 # if fails it will try look for the file another location
 def load_model():
-    # local
+    # local - successfully loads the model
     try:
         model = krs.models.load_model("mp2.h5")
     except:
-        # server/docker
+        # docker - currently not loading the model
         try:
             model = krs.models.load_model("mp2.h5")
         except:
