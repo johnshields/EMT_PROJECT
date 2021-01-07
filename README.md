@@ -29,7 +29,7 @@ $ set FLASK_APP=web_service.py && python -m flask run
 ##### Docker Image
 ```cmd
 $ cd project_files\web_service
-d$ ocker build . -t model_playground
+$ docker build . -t model_playground
 $ docker run -d -p 5000:5000 model_playground
 ```
 ***
