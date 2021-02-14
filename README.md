@@ -21,7 +21,7 @@ A Flask Web Service that uses Machine Learning to make predictions based of a Po
 # Run the Project
 ## How to run the Jupyter Notebook:
 ### From Github
-View the Jupyter Notebook [HERE](https://github.com/johnshields/EMT_PROJECT/blob/main/project_files/train-model/train-model.ipynb). All the cells should run automatically.
+View the Jupyter Notebook [HERE](https://github.com/johnshields/ML-Web-Service/blob/main/project_files/train_model/train_model.ipynb). All the cells should run automatically.
 ***
 ### From Jupyter Notebook
 ##### Run the Jupyter Notebook:
@@ -49,4 +49,4 @@ $ docker build . -t model_playground
 $ docker run -d -p 5000:5000 model_playground
 ```
 ***
-View the Wiki [HERE](https://github.com/johnshields/EMT_PROJECT/wiki) for more detail.
+View the Wiki [HERE](https://github.com/johnshields/ML-Web-Service/wiki) for more detail.
