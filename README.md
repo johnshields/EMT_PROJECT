@@ -14,7 +14,11 @@ alt="GMIT Logo" width="500" height="200"/>
 | **Student**            | [John Shields](https://github.com/johnshields) |
 | **Module Lecturer**     | Ian McLoughlin |
 | **Grade Achieved**      | A |
+***
 
+<p align="center"><img src="https://user-images.githubusercontent.com/26766163/111083744-e993af00-8506-11eb-9688-401a7d38dcf5.png"
+alt="Web-Service"/>
+  
 ***
 # Project Description 
 A Flask Web Service that uses Machine Learning to make predictions based of a Power Production of a Wind Turbine Data Set.
